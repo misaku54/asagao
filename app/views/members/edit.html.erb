@@ -1,0 +1,9 @@
+<% @page_title = "会員情報の編集" %>
+<h1><%= @page_title %></h1>
+<div class="toolbar"><%= link_to "会員の詳細に戻る", @member %></div>
+<%# updateアクションへ送る %>
+<%= form_with model: @member,local: true do |form| %>
+    <%# 部分テンプレートをレンダリング ローカル変数を送る %>
+    <%= render "shared/member_form", form: form %>
+    <div><%= form.submit %></div>
+<% end %>

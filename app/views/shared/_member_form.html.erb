@@ -1,0 +1,66 @@
+<%= render "shared/errors" ,obj: @member %>
+<table class="attr">
+    <tr>
+        <th><%= form.label :new_profile_picture %></th>
+        <td>
+            <div><%= form.file_field :new_profile_picture %></div>
+            <% if @member.profile_picture.attached? %>
+                <div>
+                    <%= image_tag @member.profile_picture.variant(resize: "128x128") %>
+                    <%= form.check_box :remove_profile_picture %>
+                    <%= form.label :remove_profile_picture %>
+                </div>
+            <% end %>
+        </td>
+    </tr>
+    <tr>
+        <th><%= form.label :number %></th>
+        <td><%= form.text_field :number, size: 8 %></td>
+    </tr>
+    <tr>
+        <th><%= form.label :name %></th>
+        <td><%= form.text_field :name %></td>
+    </tr>
+    <tr>
+        <th><%= form.label :full_name %></th>
+        <td><%= form.text_field :full_name %></td>
+    </tr>
+    <tr>
+        <th><%= Member.human_attribute_name(:sex) %></th>
+        <td>
+            <%= form.radio_button :sex, 1 %>
+            <%= form.label :sex_1 %>
+            <%= form.radio_button :sex, 2 %>
+            <%= form.label :sex_2 %>
+        </td>
+    </tr>
+    <tr>
+        <th><%= form.label :birthday, for: "member_birthday_1i" %></th>
+        <td><%= form.date_select :birthday,
+                start_year: 1940,end_year: Time.current.year,
+                use_month_numbers: true %></td>
+    </tr>
+    <tr>
+        <th><%= form.label :email %></th>
+        <td><%= form.text_field :email %></td>
+    </tr>
+    <%# 新規作成の場合に表示される（渡されたモデルオブジェクトがDBに登録されていない場合） %>
+    <% if @member.new_record? %>
+        <tr>
+            <th><%= form.label :password, "パスワード" %></th>
+            <td><%= form.text_field :password %></td>
+        </tr>
+    <% end %>
+    <%# membersコントローラーのときだけ表示する。アカウント機能の場合は表示されない。 %>
+    <% if controller.kind_of?(MembersController) %>
+        <tr>
+            <th><%= Member.human_attribute_name(:administrator) %></th>
+            <td>
+                <%# 管理者のみチェックボックスを入力できる %>
+                <%= form.check_box :administrator,
+                    disabled: !current_member.administrator? %>
+                <%= form.label :administrator %>
+            </td>
+        </tr>
+    <% end %>
+</table>

@@ -1,0 +1,9 @@
+<% @page_title = "会員の新規登録" %>
+
+<h1><%= @page_title %></h1>
+<%# createアクションへ送る%>
+<%= form_with model: @member,local: true do |form| %>
+    <%# 部分テンプレートをレンダリング ローカル変数を送る %>
+    <%= render "shared/member_form" ,form: form %>
+    <div><%= form.submit %></div>
+<% end %>

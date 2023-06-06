@@ -1,0 +1,21 @@
+current directory: /Users/eisei/rails/asagao/vendor/bundle/ruby/2.6.0/gems/racc-1.6.2/ext/racc/cparse
+/Users/eisei/.rbenv/versions/2.6.0/bin/ruby -I /Users/eisei/.rbenv/versions/2.6.0/lib/ruby/site_ruby/2.6.0 extconf.rb
+checking for rb_block_call()... yes
+checking for rb_ary_subseq()... yes
+creating Makefile
+
+current directory: /Users/eisei/rails/asagao/vendor/bundle/ruby/2.6.0/gems/racc-1.6.2/ext/racc/cparse
+make DESTDIR\= sitearchdir\=./.gem.20230114-4168-1xdgwy1 sitelibdir\=./.gem.20230114-4168-1xdgwy1 clean
+
+current directory: /Users/eisei/rails/asagao/vendor/bundle/ruby/2.6.0/gems/racc-1.6.2/ext/racc/cparse
+make DESTDIR\= sitearchdir\=./.gem.20230114-4168-1xdgwy1 sitelibdir\=./.gem.20230114-4168-1xdgwy1
+compiling cparse.c
+linking shared-object racc/cparse.bundle
+ld: warning: -undefined dynamic_lookup may not work with chained fixups
+
+current directory: /Users/eisei/rails/asagao/vendor/bundle/ruby/2.6.0/gems/racc-1.6.2/ext/racc/cparse
+make DESTDIR\= sitearchdir\=./.gem.20230114-4168-1xdgwy1 sitelibdir\=./.gem.20230114-4168-1xdgwy1 install
+/usr/bin/install -c -m 0755 cparse.bundle ./.gem.20230114-4168-1xdgwy1/racc
+
+current directory: /Users/eisei/rails/asagao/vendor/bundle/ruby/2.6.0/gems/racc-1.6.2/ext/racc/cparse
+make DESTDIR\= sitearchdir\=./.gem.20230114-4168-1xdgwy1 sitelibdir\=./.gem.20230114-4168-1xdgwy1 clean

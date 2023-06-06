@@ -1,0 +1,43 @@
+current directory: /Users/eisei/rails/asagao/vendor/bundle/ruby/2.6.0/gems/bcrypt-3.1.18/ext/mri
+/Users/eisei/.rbenv/versions/2.6.0/bin/ruby -I /Users/eisei/.rbenv/versions/2.6.0/lib/ruby/site_ruby/2.6.0 extconf.rb
+creating Makefile
+
+current directory: /Users/eisei/rails/asagao/vendor/bundle/ruby/2.6.0/gems/bcrypt-3.1.18/ext/mri
+make DESTDIR\= sitearchdir\=./.gem.20230114-4168-eroza7 sitelibdir\=./.gem.20230114-4168-eroza7 clean
+
+current directory: /Users/eisei/rails/asagao/vendor/bundle/ruby/2.6.0/gems/bcrypt-3.1.18/ext/mri
+make DESTDIR\= sitearchdir\=./.gem.20230114-4168-eroza7 sitelibdir\=./.gem.20230114-4168-eroza7
+compiling bcrypt_ext.c
+bcrypt_ext.c:41:38: warning: implicit conversion loses integer precision: 'long' to 'int' [-Wshorten-64-to-32]
+    args.size   = NIL_P(input) ? 0 : RSTRING_LEN(input);
+                ~                    ^~~~~~~~~~~~~~~~~~
+/Users/eisei/.rbenv/versions/2.6.0/include/ruby-2.6.0/ruby/ruby.h:1000:6: note: expanded from macro 'RSTRING_LEN'
+     RSTRING_EMBED_LEN(str) : \
+     ^~~~~~~~~~~~~~~~~~~~~~
+/Users/eisei/.rbenv/versions/2.6.0/include/ruby-2.6.0/ruby/ruby.h:996:6: note: expanded from macro 'RSTRING_EMBED_LEN'
+     (long)((RBASIC(str)->flags >> RSTRING_EMBED_LEN_SHIFT) & \
+     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+bcrypt_ext.c:41:38: warning: implicit conversion loses integer precision: 'long' to 'int' [-Wshorten-64-to-32]
+    args.size   = NIL_P(input) ? 0 : RSTRING_LEN(input);
+                ~                    ^~~~~~~~~~~~~~~~~~
+/Users/eisei/.rbenv/versions/2.6.0/include/ruby-2.6.0/ruby/ruby.h:1001:28: note: expanded from macro 'RSTRING_LEN'
+     RSTRING(str)->as.heap.len)
+     ~~~~~~~~~~~~~~~~~~~~~~^~~
+2 warnings generated.
+compiling crypt_blowfish.c
+clang  -D__SKIP_GNU -I/Users/eisei/.rbenv/versions/2.6.0/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -c -o x86.o x86.S
+compiling crypt_gensalt.c
+compiling wrapper.c
+wrapper.c:182:60: warning: declaration of 'struct crypt_data' will not be visible outside of this function [-Wvisibility]
+char *crypt_r(const char *key, const char *setting, struct crypt_data *data)
+                                                           ^
+1 warning generated.
+linking shared-object bcrypt_ext.bundle
+ld: warning: -undefined dynamic_lookup may not work with chained fixups
+
+current directory: /Users/eisei/rails/asagao/vendor/bundle/ruby/2.6.0/gems/bcrypt-3.1.18/ext/mri
+make DESTDIR\= sitearchdir\=./.gem.20230114-4168-eroza7 sitelibdir\=./.gem.20230114-4168-eroza7 install
+/usr/bin/install -c -m 0755 bcrypt_ext.bundle ./.gem.20230114-4168-eroza7
+
+current directory: /Users/eisei/rails/asagao/vendor/bundle/ruby/2.6.0/gems/bcrypt-3.1.18/ext/mri
+make DESTDIR\= sitearchdir\=./.gem.20230114-4168-eroza7 sitelibdir\=./.gem.20230114-4168-eroza7 clean

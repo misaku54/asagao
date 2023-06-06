@@ -1,0 +1,15 @@
+<h2>ログイン</h2>
+<% if flash[:alert] %><p class="alert"><%= flash[:alert] %></p><% end %>
+<%= form_with url: :session, local: true, id: "login-form" do |form| %>
+    <div>
+        <%= form.label :name,'ユーザー名:' %>
+        <%= form.text_field :name %>
+    </div>
+    <div>
+        <%= form.label :password,'パスワード:' %>
+        <%= form.password_field :password %>
+    </div>
+    <div>
+        <%= form.submit 'ログイン'%>
+    </div>
+<% end %>
